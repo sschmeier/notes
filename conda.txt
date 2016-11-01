@@ -1,0 +1,14 @@
+# To update all packages
+conda update --all --yes
+
+# conda list environments
+conda env list
+
+# create new env
+conda create -n [name] package [package] ...
+
+# activate env
+source activate [name]
+
+# deavtivate env
+source deactivate

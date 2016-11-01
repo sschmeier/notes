@@ -1,0 +1,11 @@
+# VIM commands
+GOTO-END-OF-FILE   | G
+GOTO-LINE          | [NUM] gg
+END-OF-LINE-APPEND | A
+BEG-OF-LINE-INSERT | I
+DELETE-LINE        | dd
+DELETE-FROM-CURSOR | D
+UNDO               | u
+REDO               | C-R
+COPY-LINE          | yy
+INSERT-LINE        | p
