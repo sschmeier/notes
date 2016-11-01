@@ -14,7 +14,7 @@ nv() {
     cat ~/projects/github/notes/"$*".txt
 }
 nrm() {
-    rm cat ~/projects/github/notes/"$*".txt
+    rm ~/projects/github/notes/"$*".txt
 }
 ```
 
