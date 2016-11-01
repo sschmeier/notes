@@ -8,7 +8,7 @@ n() {
     $EDITOR ~/projects/github/notes/"$*".txt
 }
 nls() {
-    ls -1c ~/projects/github/notes/ | grep "$*"
+    ls -1c ~/projects/github/notes/*.txt | grep "$*"
 }
 nv() {
     cat ~/projects/github/notes/"$*".txt
