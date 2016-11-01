@@ -1,0 +1,7 @@
+# Emacs stuff
+Change file-encoding   | C-x C-m f
+Python-mode uncomment  | C-u C-c #
+Execute shell-cmd      | C-u M-! [cmd]
+Insert date            | C-u M-! date -R
+Block-write            | C-x r t
+Flyspell buffer        | Command-M ;
