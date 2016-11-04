@@ -5,3 +5,5 @@ Execute shell-cmd      | C-u M-! [cmd]
 Insert date            | C-u M-! date -R
 Block-write            | C-x r t
 Flyspell buffer        | Command-M ;
+Latex compile          | C-c C-c
+revert-buffer trick    | C-x C-v RET
