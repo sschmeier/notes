@@ -1,0 +1,26 @@
+## remove header line
+cat FILE | tail -n +2 
+
+## Add line number to the front of file
+cat -n file.txt
+
+## test if lines contain non-ascii chars
+cat file.txt | grep --color=‘auto’ -P n "[\x80-\xFF]"
+
+## awk: sort tab separated file without header on second field
+cat FILE | awk 'NR==1; NR > 1 {print $0 | "sort -n -k 2"}' 
+
+## awk: in awk make use of bash variable
+variable=50;
+awk -v var="$variable" '{print var}’;
+
+## awk: get lines where all elements that are duplicated are removed, here: col 1
+cat data.tsv.gz | awk -F'\t' '!seen[$1]++
+
+## wget: with proxy
+wget -e use_proxy=yes -e http_proxy=http://sschmeie:PASSWD@alb-cache:8080 FILE
+
+## rsync: Downoad from http or ftp via rsync this will let you
+## resume should there be problems or a connection disruption
+rsync -a -P rsync://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeDir/*.gz ./
+
