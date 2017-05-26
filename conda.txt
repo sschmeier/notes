@@ -1,6 +1,9 @@
 # To update all packages
 conda update --all --yes
 
+# List all packages installed
+conda list [-n env]
+
 # conda list environments
 conda env list
 
@@ -12,3 +15,21 @@ source activate [name]
 
 # deavtivate env
 source deactivate
+
+# delete env
+conda remove --name [name] --all
+
+# freeze cond env for recreating conda env
+conda env export > freeze.yml
+
+# recreate env from freeze.yml
+conda env create -f freeze.yml
+
+# exprot all installed packages
+conda list -e > conda-packages.txt
+
+# install all packages from file
+conda create --file conda-packages.txt
+
+
+
