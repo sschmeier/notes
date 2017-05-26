@@ -30,6 +30,3 @@ conda list -e > conda-packages.txt
 
 # install all packages from file
 conda create --file conda-packages.txt
-
-
-

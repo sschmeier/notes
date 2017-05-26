@@ -1,3 +1,6 @@
 # Screen commands
-SPLIT-SCREEN   | C-v S
-REMOVE-SPLIT   | C-v X
+
+| WHAT          | CMD   |
+| ------------- | ----- |
+| SPLIT-SCREEN  | C-v S |
+| REMOVE-SPLIT  | C-v X |

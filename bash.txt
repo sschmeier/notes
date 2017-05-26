@@ -20,7 +20,6 @@ cat data.tsv.gz | awk -F'\t' '!seen[$1]++
 ## wget: with proxy
 wget -e use_proxy=yes -e http_proxy=http://sschmeie:PASSWD@alb-cache:8080 FILE
 
-## rsync: Downoad from http or ftp via rsync this will let you
-## resume should there be problems or a connection disruption
+## rsync: Download from http or ftp via rsync this will let you resume should there be problems or a connection disruption
 rsync -a -P rsync://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeDir/*.gz ./
 

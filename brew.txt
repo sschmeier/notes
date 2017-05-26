@@ -1,14 +1,17 @@
-# brew commands
-brew install git         # Install a package
-brew upgrade git         # Upgrade a package
-brew unlink git          # Unlink
-brew link git            # Link         
-brew switch git 2.5.0    # Change versions
-brew list --versions git # See what versions you have
-brew info git            # List versions, caveats, etc
-brew cleanup git         # Remove old versions
-brew update              # Update brew
-brew list                # List installed
-brew outdated            # What’s due for upgrades?
-brew upgrade --all       # Upgrade packages
-brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup  # Update casks
+# Homebrew commands
+
+| CMD                                                                        | WHAT             
+| -------------------------------------------------------------------------- | --------------------------- | 
+| brew install git                                                           | Install a package           |
+| brew upgrade git                                                           | Upgrade a package           |
+| brew unlink git                                                            | Unlink                      |
+| brew link git                                                              | Link                        |
+| brew switch git 2.5.0                                                      | Change versions             |
+| brew list --versions git                                                   | See what versions you have  |
+| brew info git                                                              | List versions, caveats, etc |
+| brew cleanup git                                                           | Remove old versions         |
+| brew update                                                                | Update brew                 |
+| brew list                                                                  | List installed              |
+| brew outdated                                                              | What’s due for upgrades?    |
+| brew upgrade --all                                                         | Upgrade packages            |
+| brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup | Update casks                |

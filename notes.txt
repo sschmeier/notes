@@ -1,0 +1,15 @@
+# How to use the cmd notes system
+
+| WHAT                         | CMD       |
+| ---------------------------- |:--------- |
+| OPEN NOTE                    | n NOTE    |
+| FIND NOTE                    | nf [NOTE] |
+| LIST NOTES BY NAME           | nls       |
+| LIST NOTES BY LAST MODIFIED  | nlst      |
+| FIND TEXT IN NOTE            | ng TEXT   |
+| QUICK VIEW NOTE              | nv NOTE   |
+| RENDER NOTE IN LYNX          | nmd NOTE  |
+| REMOVE NOTE                  | nrm NOTE  |
+| GIT: SHOW CHANGED NOTES      | ngit      |
+| GIT: UPDATE NOTES            | ngitu     |
+| GIT: ADD, COMMIT, PUSH NOTES | ngitc     | 
