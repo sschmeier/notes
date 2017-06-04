@@ -1,5 +1,7 @@
 # Note taking on command line
 
+Simple and quick note taking on the cmd. Uses git to store notes to remote.
+
 ## Setup
 Put this into .bashrc, etc. but change directory accordingly where you want to save your notes:
 
@@ -8,35 +10,38 @@ NOTESDIR=~/projects/github/notes
 n() {
     $EDITOR $NOTESDIR/"$*".txt
 }
-nf() {
-    ls -1c $NOTESDIR/*.txt | grep "$*" | xargs -I pattern basename pattern | sed s/.txt//g | sort
-}
-nls() {
-    for filename in $NOTESDIR/*.txt; do echo -n "$(stat -c%y -- $filename 2> /dev/null) | "; echo $(basename $filename); done
-}
-nlst() {
-    for filename in $NOTESDIR/*.txt; do echo -n "$(stat -c%y -- $filename 2> /dev/null) | "; echo $(basename $filename); done | sort -r | head -10
-}
-nv() {
+nn() {
     cat $NOTESDIR/"$*".txt
 }
-nrm() {
+n-help() {
+    cat $NOTESDIR/notes.txt
+}
+n-find() {
+    ls -1c $NOTESDIR/*.txt | xargs -I pattern basename pattern | grep "$*" | sed s/.txt//g | sort
+}
+n-grep() {
+     egrep -i "$*" ~/projects/gitlab/notes/*.txt
+}
+n-ls() {
+    for filename in $NOTESDIR/*.txt; do echo -n "$(stat -c%y -- $filename 2> /dev/null) | "; echo $(basename $filename); done
+}
+n-lst() {
+    for filename in $NOTESDIR/*.txt; do echo -n "$(stat -c%y -- $filename 2> /dev/null) | "; echo $(basename $filename); done | sort -r | head -10
+}
+n-rm() {
     rm $NOTESDIR/"$*".txt
 }
-nmd() {
+n-md() {
     pandoc $NOTESDIR/"$*".txt | lynx -stdin
 }
-ngit() {
+n-git() {
     cd $NOTESDIR; git st; cd - > /dev/null
 }
-ngitu() {
+n-gitu() {
     cd $NOTESDIR; git pull; cd - > /dev/null
 }
-ngitc() {
+n-gitc() {
     cd $NOTESDIR; git add *.txt; git commit; git push; cd - > /dev/null
-}
-ng() {
-     egrep -i "$*" ~/projects/gitlab/notes/*.txt
 }
 ```
 
@@ -48,33 +53,33 @@ ng() {
 n vim
 
 # List all notes by name
-nls
+n-ls
 
 # List all notes by last time modified
-nlst
+n-lst
 
 # Look for a note by name
-nf vim
+n-file vim
 
 # Quick look into note content => cat
-nv vim
+nn vim
 
 # find all notes with text in note
-ng bla
+n-grep bla
 ```
 
 ## Table of commands
 
-| WHAT                         | CMD       |
-| ---------------------------- |:--------- |
-| OPEN NOTE                    | n NOTE    |
-| FIND NOTE                    | nf [NOTE] |
-| LIST NOTES BY NAME           | nls       |
-| LIST NOTES BY LAST MODIFIED  | nlst      |
-| FIND TEXT IN NOTE            | ng TEXT   |
-| QUICK VIEW NOTE              | nv NOTE   |
-| RENDER NOTE IN LYNX          | nmd NOTE  |
-| REMOVE NOTE                  | nrm NOTE  |
-| GIT: SHOW CHANGED NOTES      | ngit      |
-| GIT: UPDATE NOTES            | ngitu     |
-| GIT: ADD, COMMIT, PUSH NOTES | ngitc     |
+| WHAT                          | CMD           |
+| ----------------------------  |:------------- |
+| OPEN NOTE                     | n NOTE        |
+| QUICK VIEW NOTE               | nn NOTE       |
+| FIND NOTE                     | n-file [NOTE] |
+| LIST NOTES BY NAME (ALL)      | n-ls          |
+| LIST NOTES LAST MODIFIED (10) | n-lst         |
+| FIND TEXT IN NOTE (egrep)     | n-grep TEXT   |
+| RENDER NOTE IN LYNX           | n-md NOTE     |
+| REMOVE NOTE                   | n-rm NOTE     |
+| GIT: SHOW CHANGED NOTES       | n-git         |
+| GIT: UPDATE NOTES             | n-gitu        |
+| GIT: ADD, COMMIT, PUSH NOTES  | n-gitc        | 
