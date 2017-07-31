@@ -1,6 +1,6 @@
-# Note taking on command line
+# Note taking on the command line
 
-Simple and quick note taking on the cmd. Uses git to store notes to remote.
+Simple and quick note taking on the CLI. Uses git to store notes to remote.
 
 ## Setup
 Put this into .bashrc, etc. but change directory accordingly where you want to save your notes:
@@ -20,7 +20,7 @@ n-find() {
     ls -1c $NOTESDIR/*.txt | xargs -I pattern basename pattern | grep "$*" | sed s/.txt//g | sort
 }
 n-grep() {
-     egrep -i "$*" ~/projects/gitlab/notes/*.txt
+     egrep -i "$*" $NOTESDIR/*.txt
 }
 n-ls() {
     for filename in $NOTESDIR/*.txt; do echo -n "$(stat -c%y -- $filename 2> /dev/null) | "; echo $(basename $filename); done
