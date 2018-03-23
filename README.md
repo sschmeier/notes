@@ -1,6 +1,8 @@
 # Note taking on the command line
 
 Simple and quick note taking on the CLI. Uses git to store notes to remote.
+Can be integrated with Dropbox and e.g. [nvALT](http://brettterpstra.com/projects/nvalt).
+
 
 ## Setup
 Put this into .bashrc, etc. but change directory accordingly where you want to save your notes:
@@ -59,7 +61,7 @@ n-ls
 n-lst
 
 # Look for a note by name
-n-file vim
+n-find vim
 
 # Quick look into note content => cat
 nn vim
@@ -74,7 +76,7 @@ n-grep bla
 | ----------------------------  |:------------- |
 | OPEN NOTE                     | n NOTE        |
 | QUICK VIEW NOTE               | nn NOTE       |
-| FIND NOTE                     | n-file [NOTE] |
+| FIND NOTE                     | n-find [NOTE] |
 | LIST NOTES BY NAME (ALL)      | n-ls          |
 | LIST NOTES LAST MODIFIED (10) | n-lst         |
 | FIND TEXT IN NOTE (egrep)     | n-grep TEXT   |
